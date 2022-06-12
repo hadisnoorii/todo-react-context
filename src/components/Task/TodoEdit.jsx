@@ -14,8 +14,9 @@ const TodoEdit = ({ updated }) => {
           type="text"
           value={context.editInput}
           onChange={context.handleEditInput}
+          className="form-control"
         />
-        <button className="btn btn-info" onClick={() => updated()}>
+        <button className="btn btn-info mr-1" onClick={() => updated()}>
           ذخیره
         </button>
       </form>
