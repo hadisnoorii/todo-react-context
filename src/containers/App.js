@@ -63,10 +63,17 @@ const App = () => {
   const handleUpdatedTodo = (id) => {
     let todo = getTodos.find((te) => te.id === id);
     let otherTodos = getTodos.filter((te) => te.id !== id);
-    let updatedTodo = { ...todo, text: getValueEditInput };
+    let updatedTodo = {
+      ...todo,
+      text:
+        getValueEditInput == "" || getValueEditInput == " "
+          ? todo.text
+          : getValueEditInput,
+    };
     setTodos([...otherTodos, updatedTodo]);
 
     setShowEdit(false);
+    console.log("hadis:", getValueEditInput);
   };
 
   return (
